@@ -21,17 +21,17 @@ javascript: (function (undefined) {
             /* this is probably doomed to fail in the future - anchors 0-5 are star ratings and 'not interested';
                the 6th anchor is the 'clear' url */
             var url = movies[i].getElementsByTagName('td')[1].getElementsByTagName('a')[6].href;
-            var title = movies[i].getElementsByTagName('td')[0].innerText;
+            var title = movies[i].getElementsByTagName('td')[0].textContent;
 
             var rating;
-            if (movies[i].getElementsByTagName('td')[1].innerText.match(/You rated this movie: \d/)) {
-                rating = movies[i].getElementsByTagName('td')[1].innerText.match(/You rated this movie: (\d)/)[1];
+            if (movies[i].getElementsByTagName('td')[1].textContent.match(/You rated this movie: \d/)) {
+                rating = movies[i].getElementsByTagName('td')[1].textContent.match(/You rated this movie: (\d)/)[1];
             } else {
                 rating = 'not interested';
             }
 
             /* actually clear the rating */
-            console.log('Clearing ' + title + ' (' + rating + ')');
+            console.log(title + ' (' + rating + ')');
             req.open('GET', url, false);
             req.send(null);
         }
