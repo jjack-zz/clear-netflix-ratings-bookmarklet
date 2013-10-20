@@ -1,4 +1,3 @@
-clear-netflix-ratings-bookmarklet
-=================================
+### Installing
 
-A bookmarklet to clear all Netflix ratings on a page, then move on to the next page.
+http://jjack.github.io/clear-netflix-ratings-bookmarklet/
